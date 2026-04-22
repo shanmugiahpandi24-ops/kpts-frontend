@@ -1,16 +1,16 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link, Navigate, useNavigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, Navigate, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 const API = 'https://kpts-backend.onrender.com/api'
 
 const properties = [
-  { id: 1, title: 'Modern Villa', location: 'Chennai', price: '₹85,00,000', beds: 4, baths: 3, sqft: 2400, type: 'Sale', img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600' },
-  { id: 2, title: 'Cozy Apartment', location: 'Coimbatore', price: '₹25,000/mo', beds: 2, baths: 1, sqft: 900, type: 'Rent', img: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600' },
-  { id: 3, title: 'Luxury Penthouse', location: 'Bangalore', price: '₹1,20,00,000', beds: 5, baths: 4, sqft: 3800, type: 'Sale', img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600' },
-  { id: 4, title: 'Studio Flat', location: 'Chennai', price: '₹12,000/mo', beds: 1, baths: 1, sqft: 450, type: 'Rent', img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600' },
-  { id: 5, title: 'Garden House', location: 'Madurai', price: '₹55,00,000', beds: 3, baths: 2, sqft: 1800, type: 'Sale', img: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600' },
-  { id: 6, title: 'Beach Villa', location: 'Pondicherry', price: '₹95,00,000', beds: 4, baths: 3, sqft: 2800, type: 'Sale', img: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600' },
+  { id: 1, title: 'Modern Villa', location: 'Chennai', price: '₹85,00,000', beds: 4, baths: 3, sqft: 2400, type: 'Sale', img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800', desc: 'A stunning modern villa with private pool, landscaped garden, and premium finishes throughout. Located in a prime gated community in Chennai with 24/7 security.', amenities: ['Swimming Pool', 'Garden', 'Parking', 'Security', 'Power Backup', 'Gym'] },
+  { id: 2, title: 'Cozy Apartment', location: 'Coimbatore', price: '₹25,000/mo', beds: 2, baths: 1, sqft: 900, type: 'Rent', img: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800', desc: 'A beautifully furnished apartment in the heart of Coimbatore. Perfect for young professionals with modern kitchen, spacious living area and balcony views.', amenities: ['Furnished', 'Balcony', 'Lift', 'Parking', 'Security', 'WiFi Ready'] },
+  { id: 3, title: 'Luxury Penthouse', location: 'Bangalore', price: '₹1,20,00,000', beds: 5, baths: 4, sqft: 3800, type: 'Sale', img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800', desc: 'An ultra-luxury penthouse on the top floor with panoramic city views. Features a private terrace, home theatre, and world-class finishes.', amenities: ['Terrace', 'Home Theatre', 'Private Pool', 'Concierge', 'Valet Parking', 'Gym'] },
+  { id: 4, title: 'Studio Flat', location: 'Chennai', price: '₹12,000/mo', beds: 1, baths: 1, sqft: 450, type: 'Rent', img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800', desc: 'A compact and well-designed studio flat ideal for students and working professionals. Fully equipped with all essential amenities.', amenities: ['Furnished', 'WiFi Ready', 'Security', 'Lift', 'Power Backup'] },
+  { id: 5, title: 'Garden House', location: 'Madurai', price: '₹55,00,000', beds: 3, baths: 2, sqft: 1800, type: 'Sale', img: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800', desc: 'A charming independent house with a beautiful garden and peaceful surroundings. Perfect for families looking for a serene lifestyle.', amenities: ['Garden', 'Parking', 'Security', 'Power Backup', 'Vastu Compliant'] },
+  { id: 6, title: 'Beach Villa', location: 'Pondicherry', price: '₹95,00,000', beds: 4, baths: 3, sqft: 2800, type: 'Sale', img: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800', desc: 'An exclusive beachfront villa with direct sea access, private deck, and breathtaking ocean views. A rare opportunity in Pondicherry.', amenities: ['Beach Access', 'Private Deck', 'Pool', 'Parking', 'Security', 'Generator'] },
 ]
 
 const gold = '#C9A84C'
@@ -26,10 +26,10 @@ function Navbar({ user, setUser }) {
   const logout = () => { localStorage.removeItem('token'); localStorage.removeItem('user'); setUser(null); navigate('/login') }
   return (
     <nav style={{background:darkNav,padding:'18px 40px',display:'flex',justifyContent:'space-between',alignItems:'center',borderBottom:`1px solid ${gold}44`,position:'sticky',top:0,zIndex:100}}>
-      <div style={{display:'flex',alignItems:'center',gap:'10px'}}>
+      <Link to="/" style={{display:'flex',alignItems:'center',gap:'10px',textDecoration:'none'}}>
         <span style={{fontSize:'24px'}}>👑</span>
         <span style={{color:gold,fontSize:'22px',fontWeight:'bold',letterSpacing:'3px'}}>KPTS LUXURY</span>
-      </div>
+      </Link>
       <div style={{display:'flex',gap:'30px',alignItems:'center'}}>
         {user ? (
           <>
@@ -139,7 +139,7 @@ function Home() {
         <h2 style={{fontSize:'36px',fontWeight:'300',marginBottom:'60px',color:'white'}}>The KPTS Difference</h2>
         <div style={{display:'flex',justifyContent:'center',gap:'30px',flexWrap:'wrap'}}>
           {[['👑','500+ Properties','Curated luxury listings'],['💎','Premium Quality','Only the finest homes'],['🤝','Expert Agents','White-glove service']].map(([icon,title,desc])=>(
-            <div key={title} style={{background:darkCard,padding:'40px 30px',borderRadius:'8px',border:`1px solid ${gold}22`,width:'220px',transition:'border 0.3s'}}>
+            <div key={title} style={{background:darkCard,padding:'40px 30px',borderRadius:'8px',border:`1px solid ${gold}22`,width:'220px'}}>
               <div style={{fontSize:'36px',marginBottom:'15px'}}>{icon}</div>
               <h3 style={{color:gold,letterSpacing:'2px',fontSize:'14px',marginBottom:'10px'}}>{title}</h3>
               <p style={{color:'#666',fontSize:'13px',lineHeight:'1.6'}}>{desc}</p>
@@ -167,23 +167,93 @@ function Properties() {
       </div>
       <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(340px,1fr))',gap:'30px',maxWidth:'1200px',margin:'0 auto'}}>
         {filtered.map(p => (
-          <div key={p.id} style={{borderRadius:'8px',overflow:'hidden',border:`1px solid ${gold}22`,background:darkCard,transition:'transform 0.3s'}}>
-            <div style={{position:'relative'}}>
-              <img src={p.img} alt={p.title} style={{width:'100%',height:'220px',objectFit:'cover'}}/>
-              <span style={{position:'absolute',top:'15px',right:'15px',background:p.type==='Sale'?gold:'#1a1a2e',color:p.type==='Sale'?'#000':'white',padding:'5px 14px',borderRadius:'3px',fontSize:'11px',letterSpacing:'2px',fontWeight:'bold'}}>{p.type}</span>
-            </div>
-            <div style={{padding:'25px'}}>
-              <h3 style={{color:'white',margin:'0 0 8px',fontSize:'18px',fontWeight:'400'}}>{p.title}</h3>
-              <p style={{color:'#666',margin:'0 0 15px',fontSize:'13px'}}>📍 {p.location}</p>
-              <p style={{color:gold,fontWeight:'bold',fontSize:'22px',margin:'0 0 20px',letterSpacing:'1px'}}>{p.price}</p>
-              <div style={{display:'flex',gap:'20px',color:'#555',fontSize:'12px',borderTop:`1px solid #222`,paddingTop:'15px',letterSpacing:'1px'}}>
-                <span>🛏 {p.beds} BEDS</span>
-                <span>🚿 {p.baths} BATHS</span>
-                <span>📐 {p.sqft} SQFT</span>
+          <Link key={p.id} to={`/property/${p.id}`} style={{textDecoration:'none'}}>
+            <div style={{borderRadius:'8px',overflow:'hidden',border:`1px solid ${gold}22`,background:darkCard,cursor:'pointer',transition:'border 0.3s',}}>
+              <div style={{position:'relative'}}>
+                <img src={p.img} alt={p.title} style={{width:'100%',height:'220px',objectFit:'cover'}}/>
+                <span style={{position:'absolute',top:'15px',right:'15px',background:p.type==='Sale'?gold:'#1a1a2e',color:p.type==='Sale'?'#000':'white',padding:'5px 14px',borderRadius:'3px',fontSize:'11px',letterSpacing:'2px',fontWeight:'bold'}}>{p.type}</span>
+              </div>
+              <div style={{padding:'25px'}}>
+                <h3 style={{color:'white',margin:'0 0 8px',fontSize:'18px',fontWeight:'400'}}>{p.title}</h3>
+                <p style={{color:'#666',margin:'0 0 15px',fontSize:'13px'}}>📍 {p.location}</p>
+                <p style={{color:gold,fontWeight:'bold',fontSize:'22px',margin:'0 0 20px',letterSpacing:'1px'}}>{p.price}</p>
+                <div style={{display:'flex',gap:'20px',color:'#555',fontSize:'12px',borderTop:`1px solid #222`,paddingTop:'15px',letterSpacing:'1px'}}>
+                  <span>🛏 {p.beds} BEDS</span>
+                  <span>🚿 {p.baths} BATHS</span>
+                  <span>📐 {p.sqft} SQFT</span>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
+      </div>
+    </div>
+  )
+}
+
+function PropertyDetail() {
+  const { id } = useParams()
+  const p = properties.find(p => p.id === parseInt(id))
+  const navigate = useNavigate()
+  const [enquiry, setEnquiry] = useState({name:'',phone:'',message:''})
+  const [sent, setSent] = useState(false)
+  if (!p) return <div style={{color:'white',textAlign:'center',padding:'100px'}}>Property not found</div>
+  return (
+    <div style={{background:dark,minHeight:'100vh',color:'white'}}>
+      <div style={{position:'relative',height:'500px'}}>
+        <img src={p.img} alt={p.title} style={{width:'100%',height:'100%',objectFit:'cover'}}/>
+        <div style={{position:'absolute',inset:0,background:'linear-gradient(to bottom, transparent, rgba(0,0,0,0.9))'}}/>
+        <button onClick={()=>navigate(-1)} style={{position:'absolute',top:'30px',left:'30px',background:`${gold}22`,color:gold,border:`1px solid ${gold}`,padding:'10px 20px',borderRadius:'4px',cursor:'pointer',letterSpacing:'1px',fontSize:'12px'}}>← BACK</button>
+        <div style={{position:'absolute',bottom:'40px',left:'40px'}}>
+          <span style={{background:p.type==='Sale'?gold:'#1a1a2e',color:p.type==='Sale'?'#000':'white',padding:'5px 14px',borderRadius:'3px',fontSize:'11px',letterSpacing:'2px',fontWeight:'bold'}}>{p.type}</span>
+          <h1 style={{fontSize:'42px',fontWeight:'300',margin:'15px 0 5px'}}>{p.title}</h1>
+          <p style={{color:'#aaa',fontSize:'16px'}}>📍 {p.location}</p>
+        </div>
+        <div style={{position:'absolute',bottom:'40px',right:'40px'}}>
+          <p style={{color:gold,fontSize:'32px',fontWeight:'bold',margin:0}}>{p.price}</p>
+        </div>
+      </div>
+      <div style={{maxWidth:'1100px',margin:'0 auto',padding:'50px 30px',display:'grid',gridTemplateColumns:'1fr 380px',gap:'40px'}}>
+        <div>
+          <div style={{display:'flex',gap:'30px',background:darkCard,padding:'25px',borderRadius:'8px',border:`1px solid ${gold}22`,marginBottom:'30px'}}>
+            {[['🛏',p.beds,'Bedrooms'],['🚿',p.baths,'Bathrooms'],['📐',p.sqft,'Sq. Ft.']].map(([icon,val,label])=>(
+              <div key={label} style={{textAlign:'center',flex:1}}>
+                <div style={{fontSize:'28px'}}>{icon}</div>
+                <div style={{color:gold,fontSize:'22px',fontWeight:'bold'}}>{val}</div>
+                <div style={{color:'#666',fontSize:'12px',letterSpacing:'1px'}}>{label}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{background:darkCard,padding:'30px',borderRadius:'8px',border:`1px solid ${gold}22`,marginBottom:'30px'}}>
+            <h3 style={{color:gold,letterSpacing:'2px',fontSize:'13px',marginBottom:'15px'}}>ABOUT THIS PROPERTY</h3>
+            <p style={{color:'#aaa',lineHeight:'1.8',fontSize:'15px'}}>{p.desc}</p>
+          </div>
+          <div style={{background:darkCard,padding:'30px',borderRadius:'8px',border:`1px solid ${gold}22`}}>
+            <h3 style={{color:gold,letterSpacing:'2px',fontSize:'13px',marginBottom:'20px'}}>AMENITIES</h3>
+            <div style={{display:'flex',flexWrap:'wrap',gap:'10px'}}>
+              {p.amenities.map(a => (
+                <span key={a} style={{background:'#1a1a1a',color:'#ccc',padding:'8px 16px',borderRadius:'4px',fontSize:'13px',border:`1px solid ${gold}22`}}>✓ {a}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div style={{background:darkCard,padding:'30px',borderRadius:'8px',border:`1px solid ${gold}33`,height:'fit-content'}}>
+          <h3 style={{color:gold,letterSpacing:'2px',fontSize:'13px',marginBottom:'25px',textAlign:'center'}}>ENQUIRE NOW</h3>
+          {sent ? (
+            <div style={{textAlign:'center',padding:'30px'}}>
+              <div style={{fontSize:'40px',marginBottom:'15px'}}>✅</div>
+              <p style={{color:gold,letterSpacing:'2px',fontSize:'13px'}}>ENQUIRY SENT!</p>
+              <p style={{color:'#666',fontSize:'13px'}}>We'll contact you shortly.</p>
+            </div>
+          ) : (
+            <>
+              <input placeholder="Your Name" value={enquiry.name} onChange={e=>setEnquiry({...enquiry,name:e.target.value})} style={luxInput}/>
+              <input placeholder="Phone Number" value={enquiry.phone} onChange={e=>setEnquiry({...enquiry,phone:e.target.value})} style={luxInput}/>
+              <textarea placeholder="Message" value={enquiry.message} onChange={e=>setEnquiry({...enquiry,message:e.target.value})} rows={4} style={{...luxInput,resize:'none'}}/>
+              <button onClick={()=>{if(enquiry.name&&enquiry.phone)setSent(true)}} style={luxBtn}>SEND ENQUIRY</button>
+            </>
+          )}
+        </div>
       </div>
     </div>
   )
@@ -238,6 +308,7 @@ export default function App() {
         <Route path="/signup" element={<Signup setUser={setUser} />} />
         <Route path="/" element={<PrivateRoute user={user}><Home /></PrivateRoute>} />
         <Route path="/properties" element={<PrivateRoute user={user}><Properties /></PrivateRoute>} />
+        <Route path="/property/:id" element={<PrivateRoute user={user}><PropertyDetail /></PrivateRoute>} />
         <Route path="/contact" element={<PrivateRoute user={user}><Contact /></PrivateRoute>} />
       </Routes>
     </Router>
