@@ -6,78 +6,87 @@ const API = 'https://kpts-backend.onrender.com/api'
 
 const properties = [
   { id: 1, title: 'Modern Villa', location: 'Chennai', price: '₹85,00,000', beds: 4, baths: 3, sqft: 2400, type: 'Sale',
-    img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=95',
+    img: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600&q=100',
     gallery: [
-      { label: 'Living Room', url: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=95' },
-      { label: 'Bedroom', url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=95' },
-      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=95' },
-      { label: 'Bathroom', url: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=95' },
-      { label: 'Garden', url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=95' },
-      { label: 'Pool', url: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=95' },
+      { label: 'Living Room', url: 'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=1600&q=100' },
+      { label: 'Master Bedroom', url: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1600&q=100' },
+      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=100' },
+      { label: 'Bathroom', url: 'https://images.unsplash.com/photo-1620626011761-996317702519?w=1600&q=100' },
+      { label: 'Garden', url: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1600&q=100' },
+      { label: 'Pool', url: 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=1600&q=100' },
     ],
     desc: 'A stunning modern villa with private pool, landscaped garden, and premium finishes throughout. Located in a prime gated community in Chennai with 24/7 security.',
     amenities: ['Swimming Pool', 'Garden', 'Parking', 'Security', 'Power Backup', 'Gym'] },
+
   { id: 2, title: 'Cozy Apartment', location: 'Coimbatore', price: '₹25,000/mo', beds: 2, baths: 1, sqft: 900, type: 'Rent',
-    img: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&q=95',
+    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&q=100',
     gallery: [
-      { label: 'Living Room', url: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=95' },
-      { label: 'Bedroom', url: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&q=95' },
-      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=95' },
-      { label: 'Bathroom', url: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=95' },
-      { label: 'Balcony', url: 'https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=1200&q=95' },
+      { label: 'Living Room', url: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=1600&q=100' },
+      { label: 'Bedroom', url: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&q=100' },
+      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=1600&q=100' },
+      { label: 'Bathroom', url: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600&q=100' },
+      { label: 'Balcony', url: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1600&q=100' },
     ],
     desc: 'A beautifully furnished apartment in the heart of Coimbatore. Perfect for young professionals with modern kitchen, spacious living area and balcony views.',
     amenities: ['Furnished', 'Balcony', 'Lift', 'Parking', 'Security', 'WiFi Ready'] },
+
   { id: 3, title: 'Luxury Penthouse', location: 'Bangalore', price: '₹1,20,00,000', beds: 5, baths: 4, sqft: 3800, type: 'Sale',
-    img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=95',
+    img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=100',
     gallery: [
-      { label: 'Living Room', url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=95' },
-      { label: 'Master Bedroom', url: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=95' },
-      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=95' },
-      { label: 'Bathroom', url: 'https://images.unsplash.com/photo-1620626011761-996317702519?w=1200&q=95' },
-      { label: 'Terrace', url: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=95' },
-      { label: 'Home Theatre', url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=95' },
+      { label: 'Living Room', url: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1600&q=100' },
+      { label: 'Master Bedroom', url: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1600&q=100' },
+      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=1600&q=100' },
+      { label: 'Bathroom', url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1600&q=100' },
+      { label: 'Terrace', url: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600&q=100' },
+      { label: 'Home Theatre', url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=100' },
     ],
     desc: 'An ultra-luxury penthouse on the top floor with panoramic city views. Features a private terrace, home theatre, and world-class finishes.',
     amenities: ['Terrace', 'Home Theatre', 'Private Pool', 'Concierge', 'Valet Parking', 'Gym'] },
+
   { id: 4, title: 'Studio Flat', location: 'Chennai', price: '₹12,000/mo', beds: 1, baths: 1, sqft: 450, type: 'Rent',
-    img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&q=95',
+    img: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&q=100',
     gallery: [
-      { label: 'Studio Area', url: 'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=1200&q=95' },
-      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=95' },
-      { label: 'Bathroom', url: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=95' },
+      { label: 'Studio Area', url: 'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=1600&q=100' },
+      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&q=100' },
+      { label: 'Bathroom', url: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600&q=100' },
+      { label: 'Workspace', url: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=1600&q=100' },
     ],
     desc: 'A compact and well-designed studio flat ideal for students and working professionals. Fully equipped with all essential amenities.',
     amenities: ['Furnished', 'WiFi Ready', 'Security', 'Lift', 'Power Backup'] },
+
   { id: 5, title: 'Garden House', location: 'Madurai', price: '₹55,00,000', beds: 3, baths: 2, sqft: 1800, type: 'Sale',
-    img: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1600&q=95',
+    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=100',
     gallery: [
-      { label: 'Living Room', url: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=95' },
-      { label: 'Bedroom', url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=95' },
-      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=95' },
-      { label: 'Garden', url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=95' },
+      { label: 'Living Room', url: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&q=100' },
+      { label: 'Bedroom', url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&q=100' },
+      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1600&q=100' },
+      { label: 'Garden', url: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1600&q=100' },
+      { label: 'Dining Room', url: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1600&q=100' },
     ],
     desc: 'A charming independent house with a beautiful garden and peaceful surroundings. Perfect for families looking for a serene lifestyle.',
     amenities: ['Garden', 'Parking', 'Security', 'Power Backup', 'Vastu Compliant'] },
+
   { id: 6, title: 'Beach Villa', location: 'Pondicherry', price: '₹95,00,000', beds: 4, baths: 3, sqft: 2800, type: 'Sale',
-    img: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&q=95',
+    img: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=1600&q=100',
     gallery: [
-      { label: 'Living Room', url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=95' },
-      { label: 'Bedroom', url: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=95' },
-      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=95' },
-      { label: 'Bathroom', url: 'https://images.unsplash.com/photo-1620626011761-996317702519?w=1200&q=95' },
-      { label: 'Beach View', url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=95' },
-      { label: 'Pool', url: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=95' },
+      { label: 'Living Room', url: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1600&q=100' },
+      { label: 'Bedroom', url: 'https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=1600&q=100' },
+      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=1600&q=100' },
+      { label: 'Bathroom', url: 'https://images.unsplash.com/photo-1620626011761-996317702519?w=1600&q=100' },
+      { label: 'Beach View', url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=100' },
+      { label: 'Pool', url: 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=1600&q=100' },
     ],
     desc: 'An exclusive beachfront villa with direct sea access, private deck, and breathtaking ocean views. A rare opportunity in Pondicherry.',
     amenities: ['Beach Access', 'Private Deck', 'Pool', 'Parking', 'Security', 'Generator'] },
+
   { id: 7, title: 'Tenkasi Heritage Villa', location: 'Tenkasi', price: '₹45,00,000', beds: 3, baths: 2, sqft: 2000, type: 'Sale',
-    img: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1600&q=95',
+    img: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1600&q=100',
     gallery: [
-      { label: 'Living Room', url: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=95' },
-      { label: 'Bedroom', url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=95' },
-      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=95' },
-      { label: 'Garden', url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=95' },
+      { label: 'Living Room', url: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=1600&q=100' },
+      { label: 'Bedroom', url: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1600&q=100' },
+      { label: 'Kitchen', url: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&q=100' },
+      { label: 'Garden', url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=100' },
+      { label: 'Mountain View', url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=100' },
     ],
     desc: 'A beautiful heritage-style villa in the scenic city of Tenkasi, nestled near the Western Ghats. Perfect for those who love nature and tranquility.',
     amenities: ['Garden', 'Parking', 'Security', 'Power Backup', 'Vastu Compliant', 'Mountain View'] },
@@ -97,7 +106,8 @@ function Footer() {
         <div style={{display:'flex',justifyContent:'space-between',flexWrap:'wrap',gap:'40px',marginBottom:'40px'}}>
           <div>
             <div style={{display:'flex',alignItems:'center',gap:'10px',marginBottom:'15px'}}>
-              <img src="/logo.png.jpeg" alt="KPTS Groups" style={{height:'50px',objectFit:'contain'}}/>
+              <img src="/logo.png.jpeg" alt="KPTS Groups" style={{height:'40px',objectFit:'contain'}}/>
+              <span style={{color:gold,fontSize:'18px',fontWeight:'bold',letterSpacing:'3px'}}>KPTS GROUPS</span>
             </div>
             <p style={{color:'#555',fontSize:'13px',lineHeight:'1.8',maxWidth:'280px'}}>Exclusive luxury villa specialists across Tamil Nadu. Your dream home, curated with care.</p>
           </div>
@@ -144,7 +154,8 @@ function Navbar({ user, setUser }) {
   return (
     <nav style={{background:darkNav,padding:'18px 40px',display:'flex',justifyContent:'space-between',alignItems:'center',borderBottom:`1px solid ${gold}44`,position:'sticky',top:0,zIndex:100}}>
       <Link to="/" style={{display:'flex',alignItems:'center',gap:'10px',textDecoration:'none'}}>
-        <img src="/logo.png.jpeg" alt="KPTS Groups" style={{height:'45px',objectFit:'contain'}}/><span style={{color:gold,fontSize:'20px',fontWeight:'bold',letterSpacing:'3px',marginLeft:'10px'}}>KPTS GROUPS</span>
+        <img src="/logo.png.jpeg" alt="KPTS Groups" style={{height:'45px',objectFit:'contain'}}/>
+        <span style={{color:gold,fontSize:'20px',fontWeight:'bold',letterSpacing:'3px'}}>KPTS GROUPS</span>
       </Link>
       <div style={{display:'flex',gap:'25px',alignItems:'center'}}>
         {user ? (
@@ -186,9 +197,9 @@ function Login({ setUser }) {
   }
   return (
     <div style={{minHeight:'100vh',background:dark,display:'flex',alignItems:'center',justifyContent:'center'}}>
-      <div style={{background:darkCard,padding:'40px 30px',borderRadius:'8px',border:`1px solid ${gold}44`,width:'220px',cursor:'pointer',transition:'all 0.3s ease',transform:'translateY(0px)'}} onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-10px)';e.currentTarget.style.border=`1px solid ${gold}`;e.currentTarget.style.boxShadow=`0 20px 40px rgba(201,168,76,0.2)`}} onMouseLeave={e=>{e.currentTarget.style.transform='translateY(0px)';e.currentTarget.style.border=`1px solid ${gold}44`;e.currentTarget.style.boxShadow='none'}}>
+      <div style={{background:darkCard,padding:'50px 40px',borderRadius:'8px',border:`1px solid ${gold}33`,width:'100%',maxWidth:'420px',boxShadow:'0 20px 60px rgba(0,0,0,0.8)'}}>
         <div style={{textAlign:'center',marginBottom:'35px'}}>
-          <div style={{fontSize:'40px',marginBottom:'10px'}}>👑</div>
+          <img src="/logo.png.jpeg" alt="KPTS" style={{height:'70px',objectFit:'contain',marginBottom:'15px'}}/>
           <h2 style={{color:gold,letterSpacing:'4px',margin:0,fontSize:'22px'}}>WELCOME BACK</h2>
           <p style={{color:'#666',marginTop:'8px',fontSize:'13px',letterSpacing:'1px'}}>Sign in to your luxury account</p>
         </div>
@@ -222,7 +233,7 @@ function Signup({ setUser }) {
     <div style={{minHeight:'100vh',background:dark,display:'flex',alignItems:'center',justifyContent:'center'}}>
       <div style={{background:darkCard,padding:'50px 40px',borderRadius:'8px',border:`1px solid ${gold}33`,width:'100%',maxWidth:'420px',boxShadow:'0 20px 60px rgba(0,0,0,0.8)'}}>
         <div style={{textAlign:'center',marginBottom:'35px'}}>
-          <div style={{fontSize:'40px',marginBottom:'10px'}}>🏛️</div>
+          <img src="/logo.png.jpeg" alt="KPTS" style={{height:'70px',objectFit:'contain',marginBottom:'15px'}}/>
           <h2 style={{color:gold,letterSpacing:'4px',margin:0,fontSize:'22px'}}>CREATE ACCOUNT</h2>
           <p style={{color:'#666',marginTop:'8px',fontSize:'13px',letterSpacing:'1px'}}>Join the exclusive community</p>
         </div>
@@ -240,7 +251,7 @@ function Signup({ setUser }) {
 function Home() {
   return (
     <div style={{background:dark,color:'white'}}>
-      <div style={{background:"linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=95') center/cover",padding:'160px 30px',textAlign:'center'}}>
+      <div style={{background:"linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600&q=100') center/cover",padding:'160px 30px',textAlign:'center'}}>
         <p style={{color:gold,letterSpacing:'8px',fontSize:'12px',marginBottom:'20px'}}>KPTS GROUPS — LUXURY REAL ESTATE</p>
         <h1 style={{fontSize:'60px',margin:'0 0 20px',fontWeight:'300',letterSpacing:'2px',lineHeight:'1.2'}}>Find Your <span style={{color:gold}}>Dream</span> Villa</h1>
         <p style={{fontSize:'18px',color:'#aaa',marginBottom:'50px',maxWidth:'500px',margin:'0 auto 50px'}}>Exclusive luxury villas across Tamil Nadu — curated for the finest taste</p>
@@ -254,7 +265,10 @@ function Home() {
         <h2 style={{fontSize:'36px',fontWeight:'300',marginBottom:'60px'}}>The KPTS Groups Difference</h2>
         <div style={{display:'flex',justifyContent:'center',gap:'30px',flexWrap:'wrap'}}>
           {[['👑','Luxury Villas Only','We specialize exclusively in luxury villa properties'],['💎','100% Online','Browse, enquire and connect — all from your device'],['🤝','Trusted Service','Personalized service for every client'],['🌍','Pan Tamil Nadu','Properties across all major Tamil Nadu cities']].map(([icon,title,desc])=>(
-            <div key={title} style={{background:darkCard,padding:'40px 30px',borderRadius:'8px',border:`1px solid ${gold}22`,width:'220px'}}>
+            <div key={title}
+              style={{background:darkCard,padding:'40px 30px',borderRadius:'8px',border:`1px solid ${gold}44`,width:'220px',cursor:'pointer',transition:'all 0.3s ease'}}
+              onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-10px)';e.currentTarget.style.boxShadow=`0 20px 40px rgba(201,168,76,0.2)`;e.currentTarget.style.border=`1px solid ${gold}`}}
+              onMouseLeave={e=>{e.currentTarget.style.transform='translateY(0px)';e.currentTarget.style.boxShadow='none';e.currentTarget.style.border=`1px solid ${gold}44`}}>
               <div style={{fontSize:'36px',marginBottom:'15px'}}>{icon}</div>
               <h3 style={{color:gold,letterSpacing:'2px',fontSize:'13px',marginBottom:'10px'}}>{title}</h3>
               <p style={{color:'#666',fontSize:'13px',lineHeight:'1.6'}}>{desc}</p>
@@ -280,7 +294,7 @@ function Home() {
 function About() {
   return (
     <div style={{background:dark,color:'white'}}>
-      <div style={{background:`linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=95') center/cover`,padding:'100px 30px',textAlign:'center'}}>
+      <div style={{background:`linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=100') center/cover`,padding:'100px 30px',textAlign:'center'}}>
         <p style={{color:gold,letterSpacing:'6px',fontSize:'12px',marginBottom:'15px'}}>WHO WE ARE</p>
         <h1 style={{fontSize:'50px',fontWeight:'300',margin:'0 0 20px'}}>About <span style={{color:gold}}>KPTS Groups</span></h1>
         <p style={{color:'#aaa',fontSize:'17px',maxWidth:'600px',margin:'0 auto'}}>Your trusted partner in finding exclusive luxury villas across Tamil Nadu</p>
@@ -317,7 +331,7 @@ function About() {
 function Agent() {
   return (
     <div style={{background:dark,color:'white'}}>
-      <div style={{background:`linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=95') center/cover`,padding:'100px 30px',textAlign:'center'}}>
+      <div style={{background:`linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=100') center/cover`,padding:'100px 30px',textAlign:'center'}}>
         <p style={{color:gold,letterSpacing:'6px',fontSize:'12px',marginBottom:'15px'}}>MEET THE TEAM</p>
         <h1 style={{fontSize:'50px',fontWeight:'300',margin:'0 0 20px'}}>Our <span style={{color:gold}}>Agent</span></h1>
       </div>
@@ -386,7 +400,10 @@ function Properties() {
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(340px,1fr))',gap:'30px',maxWidth:'1200px',margin:'0 auto'}}>
           {filtered.map(p => (
             <Link key={p.id} to={`/property/${p.id}`} style={{textDecoration:'none'}}>
-              <div style={{borderRadius:'8px',overflow:'hidden',border:`1px solid ${gold}22`,background:darkCard,cursor:'pointer',transition:'all 0.3s ease'}} onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-8px)';e.currentTarget.style.boxShadow=`0 20px 40px rgba(201,168,76,0.15)`;e.currentTarget.style.border=`1px solid ${gold}88`}} onMouseLeave={e=>{e.currentTarget.style.transform='translateY(0px)';e.currentTarget.style.boxShadow='none';e.currentTarget.style.border=`1px solid ${gold}22`}}>
+              <div
+                style={{borderRadius:'8px',overflow:'hidden',border:`1px solid ${gold}22`,background:darkCard,cursor:'pointer',transition:'all 0.3s ease'}}
+                onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-8px)';e.currentTarget.style.boxShadow=`0 20px 40px rgba(201,168,76,0.15)`;e.currentTarget.style.border=`1px solid ${gold}88`}}
+                onMouseLeave={e=>{e.currentTarget.style.transform='translateY(0px)';e.currentTarget.style.boxShadow='none';e.currentTarget.style.border=`1px solid ${gold}22`}}>
                 <div style={{position:'relative'}}>
                   <img src={p.img} alt={p.title} style={{width:'100%',height:'220px',objectFit:'cover'}}/>
                   <span style={{position:'absolute',top:'15px',right:'15px',background:p.type==='Sale'?gold:'#1a1a2e',color:p.type==='Sale'?'#000':'white',padding:'5px 14px',borderRadius:'3px',fontSize:'11px',letterSpacing:'2px',fontWeight:'bold'}}>{p.type}</span>
@@ -440,7 +457,8 @@ function PropertyDetail() {
           <p style={{color:gold,letterSpacing:'3px',fontSize:'11px',marginBottom:'15px'}}>PHOTO GALLERY</p>
           <div style={{display:'flex',gap:'12px',overflowX:'auto',paddingBottom:'10px'}}>
             {allImgs.map((img, i) => (
-              <div key={i} onClick={()=>setActiveImg(i)} style={{flexShrink:0,cursor:'pointer',borderRadius:'6px',overflow:'hidden',border:`2px solid ${activeImg===i?gold:'transparent'}`,transition:'border 0.2s'}}>
+              <div key={i} onClick={()=>setActiveImg(i)}
+                style={{flexShrink:0,cursor:'pointer',borderRadius:'6px',overflow:'hidden',border:`2px solid ${activeImg===i?gold:'transparent'}`,transition:'all 0.2s'}}>
                 <div style={{position:'relative'}}>
                   <img src={img.url} alt={img.label} style={{width:'120px',height:'80px',objectFit:'cover',display:'block'}}/>
                   <div style={{position:'absolute',bottom:0,left:0,right:0,background:'rgba(0,0,0,0.6)',padding:'4px 6px',fontSize:'10px',color:'#ccc',letterSpacing:'1px',textAlign:'center'}}>{img.label.toUpperCase()}</div>
