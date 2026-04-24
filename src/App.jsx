@@ -97,8 +97,7 @@ function Footer() {
         <div style={{display:'flex',justifyContent:'space-between',flexWrap:'wrap',gap:'40px',marginBottom:'40px'}}>
           <div>
             <div style={{display:'flex',alignItems:'center',gap:'10px',marginBottom:'15px'}}>
-              <span style={{fontSize:'22px'}}>👑</span>
-              <span style={{color:gold,fontSize:'20px',fontWeight:'bold',letterSpacing:'3px'}}>KPTS GROUPS</span>
+              <img src="/logo.png.jpeg" alt="KPTS Groups" style={{height:'50px',objectFit:'contain'}}/>
             </div>
             <p style={{color:'#555',fontSize:'13px',lineHeight:'1.8',maxWidth:'280px'}}>Exclusive luxury villa specialists across Tamil Nadu. Your dream home, curated with care.</p>
           </div>
@@ -145,8 +144,7 @@ function Navbar({ user, setUser }) {
   return (
     <nav style={{background:darkNav,padding:'18px 40px',display:'flex',justifyContent:'space-between',alignItems:'center',borderBottom:`1px solid ${gold}44`,position:'sticky',top:0,zIndex:100}}>
       <Link to="/" style={{display:'flex',alignItems:'center',gap:'10px',textDecoration:'none'}}>
-        <span style={{fontSize:'24px'}}>👑</span>
-        <span style={{color:gold,fontSize:'22px',fontWeight:'bold',letterSpacing:'3px'}}>KPTS GROUPS</span>
+        <img src="/logo.png.jpeg" alt="KPTS Groups" style={{height:'45px',objectFit:'contain'}}/><span style={{color:gold,fontSize:'20px',fontWeight:'bold',letterSpacing:'3px',marginLeft:'10px'}}>KPTS GROUPS</span>
       </Link>
       <div style={{display:'flex',gap:'25px',alignItems:'center'}}>
         {user ? (
@@ -188,7 +186,7 @@ function Login({ setUser }) {
   }
   return (
     <div style={{minHeight:'100vh',background:dark,display:'flex',alignItems:'center',justifyContent:'center'}}>
-      <div style={{background:darkCard,padding:'50px 40px',borderRadius:'8px',border:`1px solid ${gold}33`,width:'100%',maxWidth:'420px',boxShadow:'0 20px 60px rgba(0,0,0,0.8)'}}>
+      <div style={{background:darkCard,padding:'40px 30px',borderRadius:'8px',border:`1px solid ${gold}44`,width:'220px',cursor:'pointer',transition:'all 0.3s ease',transform:'translateY(0px)'}} onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-10px)';e.currentTarget.style.border=`1px solid ${gold}`;e.currentTarget.style.boxShadow=`0 20px 40px rgba(201,168,76,0.2)`}} onMouseLeave={e=>{e.currentTarget.style.transform='translateY(0px)';e.currentTarget.style.border=`1px solid ${gold}44`;e.currentTarget.style.boxShadow='none'}}>
         <div style={{textAlign:'center',marginBottom:'35px'}}>
           <div style={{fontSize:'40px',marginBottom:'10px'}}>👑</div>
           <h2 style={{color:gold,letterSpacing:'4px',margin:0,fontSize:'22px'}}>WELCOME BACK</h2>
@@ -388,7 +386,7 @@ function Properties() {
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(340px,1fr))',gap:'30px',maxWidth:'1200px',margin:'0 auto'}}>
           {filtered.map(p => (
             <Link key={p.id} to={`/property/${p.id}`} style={{textDecoration:'none'}}>
-              <div style={{borderRadius:'8px',overflow:'hidden',border:`1px solid ${gold}22`,background:darkCard,cursor:'pointer'}}>
+              <div style={{borderRadius:'8px',overflow:'hidden',border:`1px solid ${gold}22`,background:darkCard,cursor:'pointer',transition:'all 0.3s ease'}} onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-8px)';e.currentTarget.style.boxShadow=`0 20px 40px rgba(201,168,76,0.15)`;e.currentTarget.style.border=`1px solid ${gold}88`}} onMouseLeave={e=>{e.currentTarget.style.transform='translateY(0px)';e.currentTarget.style.boxShadow='none';e.currentTarget.style.border=`1px solid ${gold}22`}}>
                 <div style={{position:'relative'}}>
                   <img src={p.img} alt={p.title} style={{width:'100%',height:'220px',objectFit:'cover'}}/>
                   <span style={{position:'absolute',top:'15px',right:'15px',background:p.type==='Sale'?gold:'#1a1a2e',color:p.type==='Sale'?'#000':'white',padding:'5px 14px',borderRadius:'3px',fontSize:'11px',letterSpacing:'2px',fontWeight:'bold'}}>{p.type}</span>
