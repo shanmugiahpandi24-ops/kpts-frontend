@@ -339,7 +339,9 @@ function Agent() {
         <div style={{background:darkCard,borderRadius:'12px',border:`1px solid ${gold}33`,overflow:'hidden',marginBottom:'50px'}}>
           <div style={{display:'grid',gridTemplateColumns:'300px 1fr'}}>
             <div style={{background:`linear-gradient(135deg, #1a1a1a, #0d0d0d)`,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',padding:'50px 30px',borderRight:`1px solid ${gold}22`}}>
-              <div style={{width:'150px',height:'150px',borderRadius:'50%',background:`linear-gradient(135deg,${gold},#a07830)`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:'60px',marginBottom:'20px'}}>👨‍💼</div>
+             <div style={{width:'150px',height:'150px',borderRadius:'50%',overflow:'hidden',marginBottom:'20px',border:`3px solid ${gold}`}}>
+  <img src="/agent.jpg" alt="P. Shanmugiah Pandi" style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:'top'}} />
+</div>
               <h2 style={{color:gold,letterSpacing:'3px',fontSize:'16px',margin:'0 0 4px',textAlign:'center'}}>P. SHANMUGIAH PANDI</h2>
               <p style={{color:'#666',fontSize:'11px',letterSpacing:'2px',marginBottom:'5px'}}>CO-FOUNDER & CEO</p>
               <p style={{color:'#555',fontSize:'11px',letterSpacing:'2px',marginBottom:'25px'}}>LEAD AGENT</p>
